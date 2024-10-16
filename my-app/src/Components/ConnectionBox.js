@@ -1,31 +1,47 @@
+// ConnectionBox.js
 import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
     padding: 10px;
-    color: white; /* 文本颜色 */
-    text-align: center; /* 文本居中 */
+    color: white;
+    text-align: center;
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
 `;
 
-const ConnectionList = styled.ul`
-    list-style: none; /* 移除默认列表样式 */
-    padding: 0; /* 移除内边距 */
-    margin: 0; /* 移除外边距 */
+const Button = styled.button`
+    background-color: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+    /* Visualizar seu perfil */
+    font-family: 'Frankfurter Medium Std';
+    font-style: normal;
+    font-weight: 1500;
+    font-size: 24px;
+    line-height: 22px;
+
+
+    &:hover {
+        text-decoration: underline;
+    }
 `;
 
-const ConnectionItem = styled.li`
-    margin: 5px 0; /* 每个项目的上下间距 */
-`;
+const ConnectionBox = ({ profileUrl, connectionsUrl }) => {
+    const handleProfileClick = () => {
+        window.open(profileUrl, '_blank');
+    };
 
-const ConnectionBox = ({ connections }) => {
+    const handleConnectionsClick = () => {
+        window.open(connectionsUrl, '_blank');
+    };
+
     return (
         <Container>
-            <h4>Minhas Conexões</h4>
-            <ConnectionList>
-                {connections.map((connection, index) => (
-                    <ConnectionItem key={index}>{connection}</ConnectionItem>
-                ))}
-            </ConnectionList>
+            <Button onClick={handleProfileClick}>Visualizar seu perfil</Button>
+            <Button onClick={handleConnectionsClick}>Minhas Conexões</Button>
         </Container>
     );
 };

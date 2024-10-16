@@ -11,10 +11,10 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-    width: 40%; /* 图片宽度为方块宽度的50% */
-    height: auto; /* 保持图片的纵横比 */
-    border-radius: 10px; /* 圆角 */
-    margin-bottom: 10px; /* 图片和文字之间的间距 */
+    width: 40%; 
+    height: auto; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
 `;
 
 const Name = styled.p`
